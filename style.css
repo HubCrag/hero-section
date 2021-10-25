@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  color: #000;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #000;
+  font-weight: 400;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.section {
+  padding: 2rem 0 4rem;
+}
+
+.container {
+  max-width: 992px;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+nav.nav {
+  position: absolute;
+}
+
+section.hero {
+  height: 100vh;
+}
+
+section.hero > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  margin: 0 auto;
+}
+
+section.hero {
+  background-image: url(img/bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+nav.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: #fff;
+}
+
+ul.nav--list {
+  display: flex;
+}
+li.nav--item {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  margin-left: 32px;
+}
+
+nav.nav {
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-top: 40px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+li.nav--item a {
+  color: #fff;
+}
+
+li.nav--item a:hover {
+  text-decoration: underline;
+}
+
+h1.title {
+  font-weight: bold;
+  font-size: 72px;
+  line-height: 96px;
+  color: #fff;
+  margin-bottom: 34px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+a.btn {
+  display: flex;
+  align-items: center;
+  padding: 16px 40px;
+  color: #fff;
+  border: 1px solid #ffffff;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+}
+
+a.btn svg {
+  margin-left: 10px;
+}
+
+a.btn:hover {
+  background: #ffffff47;
+}
+.hamburger-menu {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  h1.title {
+    font-size: 32px;
+    line-height: 42px;
+  }
+  .hamburger-menu {
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 10001;
+  }
+  .hamburger-menu button {
+    position: relative;
+    width: 30px;
+    height: 22px;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+  }
+  .hamburger-menu button span {
+    position: absolute;
+    height: 3px;
+    background: #000;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    transition: 0.1s ease-in;
+  }
+  .hamburger-menu button span {
+    background: #fff;
+  }
+  .burger[data-state="open"] span {
+    background: #000;
+  }
+  .hamburger-menu button span:nth-child(2) {
+    top: 9px;
+  }
+  .hamburger-menu button span:nth-child(3) {
+    top: 18px;
+  }
+  .hamburger-menu [data-state="open"] span:first-child {
+    transform: rotate(45deg);
+    top: 10px;
+  }
+  .hamburger-menu [data-state="open"] span:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+  }
+  .hamburger-menu [data-state="open"] span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 10px;
+  }
+
+  ul.nav--list {
+    position: absolute;
+    transition: all 0.5s;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100%);
+  }
+  ul.nav--list li {
+    transition: all 0.9s;
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  ul.nav--list[data-state="open"] {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transform: translateY(0);
+  }
+  ul.nav--list[data-state="open"] li {
+    transition-delay: 0.3s;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  ul.nav--list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+  }
+
+  li.nav--item {
+    margin: 14px;
+  }
+
+  li.nav--item a {
+    color: #000;
+    padding: 8px 20px;
+    border: 1px solid #000;
+    box-shadow: 3px 3px 0 0 currentColor;
+  }
+}
