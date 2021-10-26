@@ -153,7 +153,31 @@ a.btn:hover {
 .hamburger-menu {
   display: none;
 }
-
+@media screen and (min-width: 768px) {
+    li.nav--item a {
+        display: inline-block;
+        position: relative;
+        text-decoration: none;
+      }
+      li.nav--item a:hover{
+          text-decoration: none;
+      }
+      li.nav--item a:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 0;
+        bottom: 0;
+        height: 2px;
+        margin: -5px 0;
+        left: 0;
+        background-color: white;
+        transition: all 0.4s ease-in 0s;
+      }
+      li.nav--item a:hover:after {
+        width: 100%;
+      }
+}
 @media screen and (max-width: 768px) {
   h1.title {
     font-size: 32px;
